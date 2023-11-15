@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'modules/home/home.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
-    MaterialApp(
-      themeMode: ThemeMode.dark,
-      debugShowCheckedModeBanner: false,
-      darkTheme: ThemeData.dark(),
-      home: const Root(),
+    ProviderScope(
+      child: MaterialApp(
+        themeMode: ThemeMode.dark,
+        debugShowCheckedModeBanner: false,
+        darkTheme: ThemeData.dark(),
+        home: const Root(),
+      ),
     ),
   );
 }
